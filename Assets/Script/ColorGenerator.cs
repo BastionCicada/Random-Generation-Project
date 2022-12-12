@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorGenerator : MonoBehaviour
+public class ColorHandler : MonoBehaviour
 {
-
-    public Material[] material;
-    Renderer MaterialRender;
+    public Material[] ColorMaterial;
+    public Material chosenMaterial;
     int index;
-
-
+    private Renderer rend;
 
     // Start is called before the first frame update
     void Start()
     {
-        MaterialRender = GetComponent<Renderer>();
-        MaterialRender.enabled = true;
-        MaterialRender.sharedMaterial = material[0];
-
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+        rend.sharedMaterial = ColorMaterial[0];
+        index = Random.Range(0, ColorMaterial.Length);
+        chosenMaterial = ColorMaterial[index];
+        
+        if(gameObject.tag == "Floor")
+        {
+            rend.sharedMaterial = chosenMaterial;
+        }
 
     }
 
