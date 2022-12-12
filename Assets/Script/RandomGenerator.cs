@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomGenerator : MonoBehaviour
 {
-    public GameObject arenas;
+    public GameObject[] arena;
     public GameObject choosenarena;
     int index;
 
@@ -14,7 +14,12 @@ public class RandomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(arenas, new Vector3(0, 0, 0), Quaternion.identity);
+
+        index = RandomGenerator.Range(0, arena.Length);
+        choosenarena = arena[index];
+
+
+        Instantiate(choosenarena, new Vector3(0, 0, 0), Quaternion.identity);
 
     }
 
