@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RandomGenerator : MonoBehaviour
 {
-    public GameObject arenas;
-    public GameObject choosenarena;
+    public GameObject[] prefabs;
+    public GameObject choosenprefabs;
     int index;
 
 
@@ -14,7 +14,8 @@ public class RandomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(arenas, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(choosenprefabs, new Vector3(0, 0, 0), Quaternion.identity);
+        choosenprefabs = prefabs[index];
 
     }
 

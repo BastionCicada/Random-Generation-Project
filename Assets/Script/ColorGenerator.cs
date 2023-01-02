@@ -5,8 +5,9 @@ using UnityEngine;
 public class ColorGenerator : MonoBehaviour
 {
 
-    public Material[] material;
-    Renderer MaterialRender;
+    public Material[] ColorMaterial;
+    public Material chosenMaterial;
+    private Renderer MaterialRender;
     int index;
 
 
@@ -16,7 +17,14 @@ public class ColorGenerator : MonoBehaviour
     {
         MaterialRender = GetComponent<Renderer>();
         MaterialRender.enabled = true;
-        MaterialRender.sharedMaterial = material[0];
+        MaterialRender.sharedMaterial = ColorMaterial[0];
+        index = Random.Range(0, ColorMaterial.Length);
+        chosenMaterial = ColorMaterial[index];
+
+        if(gameObject.tag == "ColorTag")
+        {
+            MaterialRender.sharedMaterial = chosenMaterial;
+        }
 
 
     }
