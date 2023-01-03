@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RandomGenerator : MonoBehaviour
 {
-    public GameObject[] prefabs;
-    public GameObject choosenprefabs;
+    public GameObject[] arena;
+    public GameObject choosenarena;
     int index;
 
 

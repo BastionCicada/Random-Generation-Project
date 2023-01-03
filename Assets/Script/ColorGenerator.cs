@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorGenerator : MonoBehaviour
+public class ColorHandler : MonoBehaviour
 {
 
     public Material[] ColorMaterial;
     public Material chosenMaterial;
     private Renderer MaterialRender;
     int index;
-
-
+    private Renderer rend;
 
     // Start is called before the first frame update
     void Start()
