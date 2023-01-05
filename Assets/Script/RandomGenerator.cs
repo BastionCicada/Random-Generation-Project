@@ -14,8 +14,8 @@ public class RandomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(choosenprefabs, new Vector3(0, 0, 0), Quaternion.identity);
-        choosenprefabs = prefabs[index];
+        Instantiate(choosenarena, new Vector3(0, 0, 0), Quaternion.identity);
+        choosenarena = arena[index];
 
     }
 
