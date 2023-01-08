@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Controller = GetComponent<CharacterController>();
+        Controller = GetComponent<CharacterController>(); // This binds the controller to the charactercontroller component
     }
 
     // Update is called once per frame

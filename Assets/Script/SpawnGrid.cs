@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnGrid : MonoBehaviour
 
 {
-    public GameObject[] InputItem;
+    public GameObject[] InputItem; // this checks for the item thats inputted which will be generated into a grid
     public int gridX;
     public int gridZ;
     public float gridSpacingOffset = 1f;
