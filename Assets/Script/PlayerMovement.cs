@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float MoveSmoothTime;
-    public float GravityStrength;
-    public float JumpStrength;
-    public float WalkSpeed;
-    public float RunSpeed;
+    public float MoveSmoothTime; // This is the smoothness between movement
+    public float GravityStrength; // This is the strength of the gravity 9.81 being closest to earth
+    public float JumpStrength; // This is how strong the strength of the jump is
+    public float WalkSpeed; // Self Explanitory, walking speed
+    public float RunSpeed; // Self Explanitory, running speed.
 
-    private CharacterController Controller;
-    private Vector3 CurrentMoveVelocity;
-    private Vector3 MoveDampVelocity;
-    private Vector3 CurrentForceVelocity;
+    private CharacterController Controller; // this defines the character controller as Controller
+    private Vector3 CurrentMoveVelocity; // This takes into account current move velocity
+    private Vector3 MoveDampVelocity; // This is taking into account velocity dampining when moving
+    private Vector3 CurrentForceVelocity; // This is the current force applied to the player moving
    
     
     // Start is called before the first frame update
@@ -25,20 +25,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 PlayerInput = new Vector3
+        Vector3 PlayerInput = new Vector3 // This takes into account the player input.
         {
-            x = Input.GetAxisRaw("Horizontal"),
+            x = Input.GetAxisRaw("Horizontal"), // This is for horizontal movement
             y = 0f,
-            z = Input.GetAxisRaw("Vertical")
+            z = Input.GetAxisRaw("Vertical")    // This is for vertical movement
 
         };
 
-        if (PlayerInput.magnitude > 1f)
+        if (PlayerInput.magnitude > 1f) // 
         {
             PlayerInput.Normalize();
         }
 
-        Vector3 MoveVector = transform.TransformDirection(PlayerInput);
+        Vector3 MoveVector = transform.TransformDirection(PlayerInput); 
         float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : WalkSpeed; // This ? Operator in this regard 'switches' between runspeed and walkspeed
 
         CurrentMoveVelocity = Vector3.SmoothDamp(
@@ -50,14 +50,14 @@ public class PlayerMovement : MonoBehaviour
 
         Controller.Move(CurrentMoveVelocity * Time.deltaTime);
 
-        Ray groundCheckRay = new Ray(transform.position, Vector3.down);
-        if (Physics.Raycast(groundCheckRay, 1.1f))
+        Ray groundCheckRay = new Ray(transform.position, Vector3.down); // This is the raycast used to check if the player is on the ground
+        if (Physics.Raycast(groundCheckRay, 1.1f)) // this checks the distances between the character and the raycast
         {
-            CurrentForceVelocity.y = -2f;
+            CurrentForceVelocity.y = -2f; // This sets the y axis jumping velocity to -2f
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space)) // This is for player jumping
             {
-                CurrentForceVelocity.y = JumpStrength;
+                CurrentForceVelocity.y = JumpStrength; // This sets the velocity equal to the jump strength
 
             }
         }

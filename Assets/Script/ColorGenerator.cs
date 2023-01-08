@@ -22,7 +22,7 @@ public class ColorGenerator : MonoBehaviour
 
         if(gameObject.tag == "ColorTag") // this looks for the a gameobject with the tag 'ColorTag'
         {
-            MaterialRender.sharedMaterial = chosenMaterial; // this applies the material
+            MaterialRender.sharedMaterial = chosenMaterial; // this applies the material to the object
         }
 
 

@@ -9,10 +9,10 @@ public class WinCondition : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-      GameObject[] goldenCubes;
-      goldenCubes = GameObject.FindGameObjectsWithTag("WinCondition");
+      GameObject[] goldenCubes; // This makes an array looking for golden cubes,
+      goldenCubes = GameObject.FindGameObjectsWithTag("WinCondition"); // this looks for goldencubes with the tag WinCondition
 
-      if (goldenCubes.Length == 0)
+      if (goldenCubes.Length == 0) //This looks for all the goldencubes left
       {
         Debug.Log("All Golden Cubes broken, restarting!");
         SceneManager.LoadScene(0);
