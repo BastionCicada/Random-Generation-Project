@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6293224129631518699}
   - component: {fileID: 3407936980004314514}
   - component: {fileID: 5786889655871867270}
+  - component: {fileID: 2705038833052757948}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: ColorTag
@@ -114,3 +115,16 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d1613949e49250c44aff6b07c61c9e5d, type: 2}
   - {fileID: 2100000, guid: ce2f5f25a0b5456439e541d1ce51d3a0, type: 2}
   chosenMaterial: {fileID: 0}
+--- !u!114 &2705038833052757948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353017201395219732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7d5eb44b2bf694f99158258ce027fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
