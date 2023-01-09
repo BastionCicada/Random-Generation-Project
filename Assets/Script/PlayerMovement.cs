@@ -33,19 +33,19 @@ public class PlayerMovement : MonoBehaviour
 
         };
 
-        if (PlayerInput.magnitude > 1f) // 
+        if (PlayerInput.magnitude > 1f) 
         {
             PlayerInput.Normalize();
         }
 
-        Vector3 MoveVector = transform.TransformDirection(PlayerInput); 
+        Vector3 MoveVector = transform.TransformDirection(PlayerInput); // This transform is used for player movement
         float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : WalkSpeed; // This ? Operator in this regard 'switches' between runspeed and walkspeed
 
         CurrentMoveVelocity = Vector3.SmoothDamp(
             CurrentMoveVelocity,
-            MoveVector * CurrentSpeed,
+            MoveVector * CurrentSpeed, // this multiplies the move vector by the current speed, allowing movement
             ref MoveDampVelocity,
-            MoveSmoothTime
+            MoveSmoothTime //This gradually changes a vector towards a desired goal over time
         );
 
         Controller.Move(CurrentMoveVelocity * Time.deltaTime);

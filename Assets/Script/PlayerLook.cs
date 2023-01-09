@@ -20,8 +20,8 @@ public class PlayerLook : MonoBehaviour
     {
         Vector2 MouseInput = new Vector2
         {
-            x = Input.GetAxis("Mouse X"),
-            y = Input.GetAxis("Mouse Y")
+            x = Input.GetAxis("Mouse X"), // This sets MouseX as the axis for x
+            y = Input.GetAxis("Mouse Y") // This sets MouseY as the axis for y
         };
 
         XYRotation.x -= MouseInput.y * Sensitivity.y;

@@ -15,7 +15,7 @@ public class WinCondition : MonoBehaviour
       if (goldenCubes.Length == 0) //This looks for all the goldencubes left
       {
         Debug.Log("All Golden Cubes broken, restarting!");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0); // Restarts the scene
         
       }
     }
